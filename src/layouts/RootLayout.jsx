@@ -1,7 +1,13 @@
-import { Fragment } from 'react';
+import { Fragment } from "react";
+import Logo from "../assets/logo.png";
+import Navbar from "./Navbar";
 
 const RootLayout = () => {
-    return <Fragment></Fragment>;
+	return (
+		<Fragment>
+			<Navbar />
+		</Fragment>
+	);
 };
 
 export default RootLayout;
