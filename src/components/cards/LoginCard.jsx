@@ -1,7 +1,26 @@
 import { LogInIcon } from "lucide-react";
+import { useContext } from "react";
+import { useForm } from "react-hook-form";
 import { Link } from "react-router";
+import AuthContext from "../../contexts/AuthContext";
 
 const LoginCard = () => {
+	const {
+		register,
+		handleSubmit,
+		reset,
+	} = useForm();
+	const { passwordLogin } = useContext(AuthContext);
+	const onSubmit = (data) => {
+		passwordLogin(data)
+			.then(() => {
+				alert("Logged in successfully. Welcome back to the community!");
+				reset();
+			})
+			.catch((error) => {
+				alert(error.message);
+			});
+	};
 	return (
 		<div className="max-w-md mx-auto p-8 rounded-3xl shadow-lg shadow-dark/20">
 			<h2 className="flex items-center justify-center gap-x-4 text-4xl font-bold uppercase text-primary">
@@ -11,13 +30,19 @@ const LoginCard = () => {
 				/>
 				Log In
 			</h2>
-			<form className="my-8 space-y-4">
+			<form
+				className="my-8 space-y-4"
+				onSubmit={handleSubmit(onSubmit)}
+			>
 				<label className="flex flex-col gap-y-1 text-lg">
 					<span className="font-medium">Email</span>
 					<input
 						type="email"
 						className="p-2 bg-stone-50 border border-dark/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
 						placeholder="Account Email"
+						{...register("email", {
+							required: "Email is required",
+						})}
 					/>
 				</label>
 				<label className="flex flex-col gap-y-1 text-lg">
@@ -26,6 +51,7 @@ const LoginCard = () => {
 						type="password"
 						className="p-2 bg-stone-50 border border-dark/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
 						placeholder="Account Password"
+						{...register("password", { required: "Password is required" })}
 					/>
 				</label>
 				<div className="text-center">
