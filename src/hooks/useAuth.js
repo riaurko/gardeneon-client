@@ -1,4 +1,5 @@
 import {
+	createUserWithEmailAndPassword,
 	GoogleAuthProvider,
 	signInWithEmailAndPassword,
 	signInWithPopup,
@@ -15,7 +16,11 @@ const useAuth = () => {
 	const passwordLogin = ({ email, password }) => {
 		return signInWithEmailAndPassword(auth, email, password);
 	};
-	return { googleLogin, passwordLogin };
+	// Sign up user
+	const signUp = ({ email, password }) => {
+		return createUserWithEmailAndPassword(auth, email, password);
+	};
+	return { googleLogin, passwordLogin, signUp };
 };
 
 export default useAuth;
