@@ -3,34 +3,90 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router";
 import AuthContext from "../../contexts/AuthContext";
+import { toast, Zoom } from "react-toastify";
 
 const LoginCard = () => {
 	const {
 		register,
 		handleSubmit,
+		formState: { errors },
 		reset,
 	} = useForm();
 	const { googleLogin, passwordLogin } = useContext(AuthContext);
 	const onSubmit = (data) => {
 		passwordLogin(data)
 			.then(() => {
-				alert("Logged in successfully. Welcome back to the community!");
+				toast.success("Logged in successfully. Welcome back to the community!", {
+					theme: "light",
+					position: "top-left",
+					autoClose: 4000,
+					closeOnClick: true,
+					hideProgressBar: false,
+					draggable: true,
+					pauseOnHover: false,
+					pauseOnFocusLoss: false,
+					transition: Zoom,
+				});
 				reset();
 			})
 			.catch((error) => {
-				alert(error.message);
+				toast.error(error.message, {
+					theme: "light",
+					position: "top-left",
+					autoClose: 3500,
+					closeOnClick: true,
+					hideProgressBar: true,
+					draggable: true,
+					pauseOnHover: false,
+					pauseOnFocusLoss: false,
+					transition: Zoom,
+				});
 			});
 	};
 	const handleGoogleLogin = () => {
 		googleLogin()
 			.then(() => {
-				alert("Logged in successfully");
+				toast.success("Logged in successfully. Welcome back to the community!", {
+					theme: "light",
+					position: "top-left",
+					autoClose: 4000,
+					closeOnClick: true,
+					hideProgressBar: false,
+					draggable: true,
+					pauseOnHover: false,
+					pauseOnFocusLoss: false,
+					transition: Zoom,
+				});
 				reset();
 			})
 			.catch((error) => {
-				console.log(error);
+				toast.error(error.message, {
+					theme: "light",
+					position: "top-left",
+					autoClose: 3500,
+					closeOnClick: true,
+					hideProgressBar: true,
+					draggable: true,
+					pauseOnHover: false,
+					pauseOnFocusLoss: false,
+					transition: Zoom,
+				});
 			});
 	};
+	if (Object.values(errors).length) {
+		const errorMessage = Object.values(errors)[0].message;
+		toast.error(errorMessage, {
+			theme: "light",
+			position: "top-left",
+			autoClose: 3500,
+			closeOnClick: true,
+			hideProgressBar: true,
+			draggable: true,
+			pauseOnHover: false,
+			pauseOnFocusLoss: false,
+			transition: Zoom,
+		});
+	}
 	return (
 		<div className="max-w-md mx-auto p-8 rounded-3xl shadow-lg shadow-dark/20">
 			<h2 className="flex items-center justify-center gap-x-4 text-4xl font-bold uppercase text-primary">
