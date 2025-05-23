@@ -5,6 +5,7 @@ import HomePage from "../pages/HomePage";
 import SignUpPage from "../pages/SignUpPage";
 import ShareTipPage from "../pages/ShareTipPage";
 import BrowseTipsPage from "../pages/BrowseTipsPage";
+import TipDetailsPage from "../pages/TipDetailsPage";
 
 const router = createBrowserRouter([
 	{
@@ -32,6 +33,12 @@ const router = createBrowserRouter([
 				Component: BrowseTipsPage,
 				loader: () => fetch("http://localhost:5100/tips"),
 			},
+			{
+				path: "/tip/:id",
+				Component: TipDetailsPage,
+				loader: () => fetch("http://localhost:5100/tips"),
+			},
+		
 		],
 	},
 ]);
