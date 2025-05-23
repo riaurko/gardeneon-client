@@ -6,6 +6,7 @@ import SignUpPage from "../pages/SignUpPage";
 import ShareTipPage from "../pages/ShareTipPage";
 import BrowseTipsPage from "../pages/BrowseTipsPage";
 import TipDetailsPage from "../pages/TipDetailsPage";
+import ExploreGardenersPage from "../pages/ExploreGardenersPage";
 
 const router = createBrowserRouter([
 	{
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
 			{
 				path: "/signup",
 				Component: SignUpPage,
+			},
+			{
+				path: "/gardeners",
+				Component: ExploreGardenersPage,
 			},
 			{
 				path: "/share-tip",
