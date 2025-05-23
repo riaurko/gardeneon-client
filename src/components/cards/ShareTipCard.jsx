@@ -22,7 +22,7 @@ const ShareTipCard = () => {
 					toast.success("Tip post shared successfully.", {
 						theme: "light",
 						position: "top-left",
-						autoClose: 4000,
+						autoClose: 2500,
 						closeOnClick: true,
 						hideProgressBar: false,
 						draggable: true,
@@ -100,6 +100,7 @@ const ShareTipCard = () => {
 						<option>Urban Gardening</option>
 						<option>Indoor Gardening</option>
 						<option>Seasonal Gardening</option>
+						<option>Vertical Gardening</option>
 						<option>Flower Gardening</option>
 						<option>Composting</option>
 						<option>Pest Control</option>
