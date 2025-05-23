@@ -49,8 +49,10 @@ const ShareTipCard = () => {
 			<h2 className="text-4xl font-bold text-center uppercase text-primary">
 				💡 Share A Garden Tip
 			</h2>
-			<form className="max-w-xl mx-auto mt-12 space-y-4"
-				onSubmit={handleSubmit}>
+			<form
+				className="max-w-xl mx-auto mt-12 space-y-4"
+				onSubmit={handleSubmit}
+			>
 				<label className="flex flex-col gap-y-1 text-lg">
 					<span className="font-medium">Title</span>
 					<input
