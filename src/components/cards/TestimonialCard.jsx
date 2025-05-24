@@ -3,16 +3,15 @@ import Quote from "../../assets/quote.png";
 const TestimonialCard = ({ data }) => {
 	const { image, name, designation, rating, title, description } = data;
 	let ratingText = "";
-	for (let i = 0; i < rating; i++)
-		ratingText += "⭐";
+	for (let i = 0; i < rating; i++) ratingText += "⭐️";
 	return (
 		<div className="bg-stone-50 border border-dark/10 rounded-3xl p-8 space-y-6 relative h-full">
 			<img
 				src={Quote}
 				alt="Background Image"
-				className="size-16 absolute left-1/2 top-2 -translate-x-1/2 opacity-30"
+				className="size-16 absolute left-2/3 top-1/4 lg:left-1/2 lg:top-2 lg:-translate-x-1/2 opacity-30"
 			/>
-			<div className="flex items-center justify-between">
+			<div className="flex flex-col 2xl:flex-row gap-y-5 2xl:items-center justify-between">
 				<div className="flex items-center gap-4">
 					<img
 						src={`https://randomuser.me/api/portraits/${image}.jpg`}

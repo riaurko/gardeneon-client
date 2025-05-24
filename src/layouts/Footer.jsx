@@ -2,7 +2,7 @@ import Logo from "../assets/logo.png";
 
 const Footer = () => {
 	return (
-		<footer className="mt-24 p-32 bg-dark text-light flex justify-between">
+		<footer className="mt-24 px-6 py-16 lg:p-32 bg-dark text-light flex flex-col lg:flex-row justify-between gap-y-6">
 			{/* Logo */}
 			<div className="space-y-3">
 				<div className="flex items-center gap-x-3 cursor-default">
@@ -20,8 +20,8 @@ const Footer = () => {
 				<h5 className="text-xl font-bold text-stone-300">Contact</h5>
 				<ul className="space-y-1 text-lg">
 					<li>Horogram Bazar, Rajshahi, Rajshahi 6201</li>
-					<li>riaurko@gmail.com</li>
-					<li>+880-1717-549249</li>
+					<li>promahnaf@gmail.com</li>
+					<li>+880-1710-243940</li>
 				</ul>
 			</div>
 			{/* Legal links */}
@@ -75,7 +75,7 @@ const Footer = () => {
 					</li>
 					<li>
 						<a
-							href="https://github.com/riaurko"
+							href="https://github.com/ninjaquasar"
 							target="_blank"
 						>
 							<img
@@ -87,7 +87,7 @@ const Footer = () => {
 					</li>
 					<li>
 						<a
-							href="https://www.facebook.com/riaurko"
+							href="https://www.facebook.com/ninjaquasar"
 							target="_blank"
 						>
 							<img
@@ -99,7 +99,7 @@ const Footer = () => {
 					</li>
 					<li>
 						<a
-							href="https://www.youtube.com/@riaurko"
+							href="https://www.youtube.com/@ninjaquasar"
 							target="_blank"
 						>
 							<img

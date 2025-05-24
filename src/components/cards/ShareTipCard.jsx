@@ -9,7 +9,7 @@ const ShareTipCard = () => {
 		const formData = new FormData(form);
 		const tipData = Object.fromEntries(formData.entries());
 		// Send data to server
-		fetch("http://localhost:5100/tips", {
+		fetch("https://a10-gardeneon-server.vercel.app/tips", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",
@@ -22,7 +22,7 @@ const ShareTipCard = () => {
 					toast.success("Tip post shared successfully.", {
 						theme: "light",
 						position: "top-left",
-						autoClose: 2500,
+						autoClose: 4000,
 						closeOnClick: true,
 						hideProgressBar: false,
 						draggable: true,
@@ -45,12 +45,14 @@ const ShareTipCard = () => {
 			});
 	};
 	return (
-		<div className="max-w-4xl mx-auto bg-stone-50 p-8 rounded-4xl shadow-lg shadow-dark/10">
-			<h2 className="text-4xl font-bold text-center uppercase text-primary">
+		<div className="max-w-sm lg:max-w-4xl mx-auto bg-stone-50 p-8 rounded-4xl shadow-lg shadow-dark/10">
+			<h2 className="text-3xl md:text-4xl font-bold text-center uppercase text-primary">
 				💡 Share A Garden Tip
 			</h2>
-			<form className="max-w-xl mx-auto mt-12 space-y-4"
-				onSubmit={handleSubmit}>
+			<form
+				className="max-w-xs lg:max-w-xl mx-auto mt-12 space-y-4"
+				onSubmit={handleSubmit}
+			>
 				<label className="flex flex-col gap-y-1 text-lg">
 					<span className="font-medium">Title</span>
 					<input
@@ -99,8 +101,8 @@ const ShareTipCard = () => {
 						<option>Plant Care</option>
 						<option>Urban Gardening</option>
 						<option>Indoor Gardening</option>
-						<option>Seasonal Gardening</option>
 						<option>Vertical Gardening</option>
+						<option>Seasonal Gardening</option>
 						<option>Flower Gardening</option>
 						<option>Composting</option>
 						<option>Pest Control</option>
@@ -133,7 +135,7 @@ const ShareTipCard = () => {
 				<div className="text-center mt-8">
 					<button
 						type="submit"
-						className="w-60 py-3 bg-primary text-light hover:bg-primary/90 text-2xl font-bold rounded-xl cursor-pointer"
+						className="w-40 md:w-60 py-3 bg-primary text-light hover:bg-primary/90 text-xl lg:text-2xl font-bold rounded-xl cursor-pointer"
 					>
 						Share Tip
 					</button>
